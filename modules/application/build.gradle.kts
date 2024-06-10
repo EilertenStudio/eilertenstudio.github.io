@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.targets.js.npm.NpmExtension
+
 plugins {
     // Kotlin
     // ------------------------------------------------------------------------
@@ -37,7 +39,6 @@ kotlin {
                 implementation(npm("react", "^${extra.get("react.version")}"))
                 implementation(npm("react-dom", "^${extra.get("react.version")}"))
 
-//                implementation(devNpm("create-vite", "^5.2.3"))
                 implementation(devNpm("@types/react", "^${extra.get("react.version")}"))
                 implementation(devNpm("@types/react-dom", "^${extra.get("react.version")}"))
                 implementation(
@@ -63,6 +64,69 @@ kotlin {
                 )
                 implementation(devNpm("typescript", "^${extra.get("typescript.version")}"))
                 implementation(devNpm("vite", "^${extra.get("vite.version")}"))
+            }
+        }
+    }
+}
+
+
+tasks {
+    register("viteBuild") {
+        group = "Vite"
+        description = ""
+
+        dependsOn("viteSetup")
+        doLast {
+            exec {
+                workingDir = projectDir
+                executable = rootProject.the<NpmExtension>().environment.executable
+                args = listOf(
+                    "run",
+                    "build"
+                )
+                println(workingDir)
+                println(commandLine)
+                println()
+            }
+        }
+    }
+
+    register("viteDev") {
+        group = "Vite"
+        description = ""
+
+        dependsOn("viteSetup")
+        doLast {
+            exec {
+                workingDir = projectDir
+                executable = rootProject.the<NpmExtension>().environment.executable
+                args = listOf(
+                    "run",
+                    "dev"
+                )
+                println(workingDir)
+                println(commandLine)
+                println()
+            }
+        }
+    }
+
+    register("vitePreview") {
+        group = "Vite"
+        description = ""
+
+        dependsOn("viteBuild")
+        doLast {
+            exec {
+                workingDir = projectDir
+                executable = rootProject.the<NpmExtension>().environment.executable
+                args = listOf(
+                    "run",
+                    "preview"
+                )
+                println(workingDir)
+                println(commandLine)
+                println()
             }
         }
     }

@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.plugin.getKotlinPluginVersion
+
 plugins {
     `kotlin-dsl`
 }
@@ -8,4 +10,6 @@ repositories {
 }
 
 dependencies {
+//    implementation(gradleApi())
+//    implementation(gradleKotlinDsl())
 }

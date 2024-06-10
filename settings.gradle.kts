@@ -16,10 +16,11 @@ dependencyResolutionManagement {
 
 rootProject.projectDir
     .listFiles()
-    ?.filter { it -> it.isDirectory }
-    ?.filter { it -> it.name.equals("modules") }
+    ?.filter { it.isDirectory }
+    ?.filter { it.name.equals("modules") }
     ?.forEach {
         it.listFiles()
+            ?.filter { file -> file.isDirectory }
             ?.forEach { file ->
                 include(":${file.name}")
                 project(":${file.name}").projectDir = file
