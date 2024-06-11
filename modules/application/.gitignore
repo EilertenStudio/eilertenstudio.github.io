@@ -1,3 +1,8 @@
+### Eilerten Studio
+node_modules
+dist
+package.json
+
 ### Node template
 # Logs
 logs
