@@ -38,6 +38,8 @@ kotlin {
             dependencies {
                 implementation(npm("react", "^${extra.get("react.version")}"))
                 implementation(npm("react-dom", "^${extra.get("react.version")}"))
+                implementation(npm("react-router-dom", "^${extra.get("react-router-dom.version")}"))
+                implementation(npm("react-scroll-parallax", "^${extra.get("react-scroll-parallax.version")}"))
 
                 implementation(devNpm("@types/react", "^${extra.get("react.version")}"))
                 implementation(devNpm("@types/react-dom", "^${extra.get("react.version")}"))
