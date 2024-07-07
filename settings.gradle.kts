@@ -1,3 +1,5 @@
+import org.gradle.internal.impldep.com.google.common.collect.Comparators
+
 pluginManagement {
     resolutionStrategy {
         plugins {
@@ -20,20 +22,27 @@ dependencyResolutionManagement {
 
 rootProject.projectDir
     .listFiles()
-    ?.filter { it.isDirectory
-            && it.name.equals("integrations")
+    ?.filter { file -> file.isDirectory }
+    ?.filter { file ->
+        arrayOf(
+            "integrations",
+            "modules"
+        ).map {
+            it == file.name
+        }.reduce { acc, b -> acc || b }
     }
-    ?.forEach { category -> category.listFiles()
-        ?.filter { it.isDirectory }
-        ?.forEach { module ->
+    ?.forEach { category ->
+        category.listFiles()
+            ?.filter { it.isDirectory }
+            ?.forEach { module ->
 //            includeBuild(module.path) {
 //                name = "${category.name}:${module.name}"
 //            }
-            ":${category.name}:${module.name}".let {
-                include(it)
-                project(it).apply {
-                    projectDir = module
+                ":${category.name}:${module.name}".let {
+                    include(it)
+                    project(it).apply {
+                        projectDir = module
+                    }
                 }
             }
-        }
     }
