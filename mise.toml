@@ -1,0 +1,6 @@
+[tools]
+npm = "latest"
+
+[tasks."server:start"]
+dir = "{{ cwd }}/packages/core"
+run = "npm run dev"
