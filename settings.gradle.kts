@@ -21,7 +21,7 @@ dependencyResolutionManagement {
 rootProject.projectDir
     .listFiles()
     ?.filter { it.isDirectory
-            && it.name.equals("integrations")
+            && it.name.equals("packages")
     }
     ?.forEach { category -> category.listFiles()
         ?.filter { it.isDirectory }

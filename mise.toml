@@ -1,6 +1,11 @@
 [tools]
-npm = "latest"
+#act = "latest"
+#gh = "latest"
+#gradle = "latest"
+#java = "openjdk-21.0.2"
 
-[tasks."server:start"]
-dir = "{{ cwd }}/packages/core"
-run = "npm run dev"
+# -----------------------------------------------------------------------------
+[tasks."website:core"]
+description = "Access to package core"
+dir = "{{cwd}}/packages/core"
+run = "mise r website:core:{{arg(var=true, default='tasks')}}"
