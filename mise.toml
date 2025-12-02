@@ -1,0 +1,11 @@
+[tools]
+#act = "latest"
+#gh = "latest"
+#gradle = "latest"
+#java = "openjdk-21.0.2"
+
+# -----------------------------------------------------------------------------
+[tasks."website:core"]
+description = "Access to package core"
+dir = "{{cwd}}/packages/core"
+run = "mise r website:core:{{arg(var=true, default='tasks')}}"
