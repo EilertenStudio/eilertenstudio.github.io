@@ -1,6 +1,6 @@
 'use client';
 
-import {useSearchParams} from "next/navigation";
+import {redirect, useSearchParams} from "next/navigation";
 
 export default function MainPage() {
   const searchParams = new URLSearchParams(useSearchParams());
@@ -8,10 +8,10 @@ export default function MainPage() {
   const type = searchParams.get("type");
   searchParams.delete("type");
 
-  // redirect("https://eilertenstudio.itch.io/mission-hexalife");
-  return (
-    <>
-      Content under development
-    </>
-  );
+  redirect("https://eilertenstudio.itch.io");
+  // return (
+  //   <>
+  //     Content under development
+  //   </>
+  // );
 }
