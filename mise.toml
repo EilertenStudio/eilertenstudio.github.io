@@ -32,6 +32,13 @@ run = [
 ]
 
 # -----------------------------------------------------------------------------
+[tasks."storybook:start"]
+description = "Start storybook"
+run = [
+  "mise //packages/core:storybook:start"
+]
+
+# -----------------------------------------------------------------------------
 [tasks.'github:workflow']
 description = "Access to GitHub Actions workflow of the package"
 dir = "{{cwd}}"
