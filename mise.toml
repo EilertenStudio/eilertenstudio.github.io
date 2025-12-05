@@ -24,6 +24,12 @@ run = [
   "mise //packages/core:build"
 ]
 
+[tasks."check"]
+description = "Validate project source code"
+run = [
+  "mise //packages/core:check"
+]
+
 # -----------------------------------------------------------------------------
 [tasks."server:start"]
 description = "Start server"

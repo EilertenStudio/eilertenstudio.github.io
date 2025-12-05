@@ -7,6 +7,9 @@ run = "npm i"
 description = "Build project artifacts"
 run = "npm run build"
 
+[tasks."check"]
+description = "Validate project source code"
+run = "npm run lint"
 
 # -----------------------------------------------------------------------------
 [tasks."server:start"]

@@ -27,7 +27,6 @@ export const ItchIo: Story = {
 };
 
 export const Discord: Story = {
-  name: "Discord",
   args: {
     type: SocialButtonType.Discord,
     link: "https://discord.gg"

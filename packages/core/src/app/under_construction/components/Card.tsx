@@ -16,7 +16,7 @@ export default function Card(p: CardProps) {
       <p className={"subtitle"}>{p.subtitle}</p>
       <p className={"social-container"}>
         {p.socialButtons.map((it, index) => {
-          return <SocialButton type={it.type} link={it.link} key={it.type} />
+          return <SocialButton type={it.type} link={it.link} key={`social-button-${index}`} />
         })}
       </p>
     </div>
