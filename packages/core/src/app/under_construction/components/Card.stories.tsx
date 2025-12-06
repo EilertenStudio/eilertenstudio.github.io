@@ -21,11 +21,15 @@ export const Default: Story = {
     socialButtons: [
       {
         type: SocialButtonType.GitHub,
-        link: "example.com"
+        link: "https://github.com"
+      },
+      {
+        type: SocialButtonType.ItchIo,
+        link: "https://itch.io"
       },
       {
         type: SocialButtonType.Discord,
-        link: "example.com"
+        link: "https://discord.gg"
       }
     ],
 

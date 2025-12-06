@@ -11,7 +11,7 @@ interface CardProps {
 
 export default function Card(p: CardProps) {
   return (
-    <div className={"card"}>
+    <div className={"under-construction_card"}>
       <h1 className={"title"}>{p.title}</h1>
       <p className={"subtitle"}>{p.subtitle}</p>
       <p className={"social-container"}>

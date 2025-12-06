@@ -15,7 +15,7 @@ export interface SocialButtonProps {
 
 export default function SocialButton(p: SocialButtonProps) {
   return (
-    <a className={"social-button"} href={p.link}>
+    <a className={"under-construction_social-button"} href={p.link}>
       <button title={p.type}>
           <img src={`/assets/icons/icon-${p.type}-white.svg`} alt={p.type} style={{height: "100%"}}/>
       </button>

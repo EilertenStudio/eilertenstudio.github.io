@@ -4,6 +4,9 @@ import Page from './page';
 
 const meta = {
   component: Page,
+  parameters: {
+    layout: "fullscreen"
+  }
 } satisfies Meta<typeof Page>;
 
 export default meta;
